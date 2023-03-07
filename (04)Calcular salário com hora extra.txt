@@ -1,0 +1,23 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro horas
+		real taxa, rendimento, total, extra
+		
+		escreva("Insira o salário por hora: ")
+		leia(taxa)
+		escreva("Insira o número de horas trabalhadas: ")
+		leia(horas)
+
+		//Funcionário trabalha por padrão 160 horas por mês (40 por semana)
+		rendimento = horas * taxa
+		extra = (horas - 40) * (taxa * 0.5)
+		limpa()
+		
+		escreva("O salário mensal do funcionário com horas extras totalizou: R$" + (rendimento + extra))
+	}
+}
+
+

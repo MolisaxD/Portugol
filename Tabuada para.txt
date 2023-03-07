@@ -1,0 +1,15 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro num1, resultado
+		
+		escreva(Digite um número desejado\n)
+		leia(num1)
+
+		para(inteiro i = 100; i = 1; i--) {
+			escreva(num1 ,  + i , = , resultado = num1  i , n)
+		}
+	}
+}

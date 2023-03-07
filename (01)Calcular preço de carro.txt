@@ -1,0 +1,17 @@
+programa
+{
+	
+	funcao inicio()
+	{	
+		real dist = 0.28, imp = 0.45, custo, total
+
+		escreva("Insira o custo de produção do carro: ")
+		leia(custo)
+		total = custo + (custo * dist) + (custo * imp)
+		limpa()
+
+		escreva("A taxa de distribuição sobre este carro é de R$" + (custo * dist) + "\n")
+		escreva("O valor de impostos cobrados é de R$" + (custo * imp) + "\n")
+		escreva("O valor total do carro com impostos é: " + total) 
+	}
+}

@@ -1,0 +1,16 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real km, L, cons
+		
+		escreva("Insira a distância percorrida pelo seu automóvel em km: ")
+		leia(km)
+		escreva("Insira a quantidade de combustível consumido em litros: ")
+		leia(L)
+
+		cons = km / L
+		escreva("Seu automóvel percorre " + cons + " km por litro.")
+	}
+}

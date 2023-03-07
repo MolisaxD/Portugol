@@ -1,0 +1,12 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real F, C
+		escreva("Insira a temperatura em fahrenheit: ")
+		leia(F)
+		C = F * 1.8 + 32
+		escreva("Conversão: " + C + " ºF")
+	}
+}

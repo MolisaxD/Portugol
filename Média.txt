@@ -1,0 +1,14 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real nota1, nota2, media
+		escreva("Insira um valor: ")
+		leia(nota1)
+		escreva("Insira um segundo valor: ")
+		leia(nota2)
+		media = (nota1 + nota2)/2
+		escreva("A média do(a) aluno é: " + media)
+	}
+}

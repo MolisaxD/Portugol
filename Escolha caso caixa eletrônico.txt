@@ -1,0 +1,41 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+		inteiro opcao
+		real saldo = 1000, arredondarSaldo, saque, deposito
+		
+		escreva("--- MENU ---\n")
+		escreva("1) Saque\n")
+		escreva("2) Depósito\n")
+		escreva("Escolha a opção de sua preferência: ")
+		leia(opcao)
+
+		limpa()
+
+		escolha(opcao)
+		{
+			caso 1:
+			escreva("Informe o valor do saque: R$")
+			leia(saque)
+			saldo = saldo - saque
+			arredondarSaldo = mat.arredondar(saldo, 2)
+			escreva("Seu saldo atualizado é: R$" + arredondarSaldo)
+			pare
+
+			caso 2:
+			escreva("Informe o valor do depósito: R$")
+			leia(deposito)
+			saldo = saldo + deposito
+			arredondarSaldo = mat.arredondar(saldo, 2)
+			escreva("Seu saldo atualizado é: R$" + arredondarSaldo)
+			pare
+
+			caso contrario:
+			escreva("Opção inválida.")
+			pare
+		}
+	}
+}

@@ -1,0 +1,23 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro carros
+		real salario, com, vendas, total
+
+		escreva("Insira o valor do salário fixo: ")
+		leia(salario)
+		escreva("Insira o número de carros vendidos:" )
+		leia(carros)
+		escreva("Insira o valor da comissão por carro:" )
+		leia(com)
+
+		vendas = (carros * com) 
+		vendas = vendas + (vendas * 0.05)
+		total = salario + vendas
+		limpa()
+
+		escreva("O salário final do vendedor foi de: R$" + total)
+	}
+}

@@ -1,0 +1,20 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real nota1, nota2, nota3, media
+		
+		escreva("Insira a primeira nota do(a) aluno(a): ")
+		leia(nota1)
+		escreva("Insira a segunda nota do(a) aluno(a): ")
+		leia(nota2)
+		escreva("Insira a terceira nota do(a) aluno(a): ")
+		leia(nota3)
+		
+		media = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5))/10
+		
+		escreva("A média final deste(a) aluno(a) é de: " + media)
+		
+	}
+}

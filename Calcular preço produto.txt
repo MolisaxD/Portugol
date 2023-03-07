@@ -1,0 +1,17 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real custo, lucro, preco
+		
+		escreva("Insira o custo de produção da mercadoria: ")
+		leia(custo)
+		escreva("Insira a margem de lucro (em %): ")
+		leia(lucro)
+
+		preco = custo + (custo * lucro/100)
+
+		escreva("Preço final: R$" + preco)
+	}
+}

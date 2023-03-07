@@ -1,0 +1,14 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real produto, desconto = 0.1, total
+
+		escreva("Insira o valor do produto: ")
+		leia(produto)
+
+		total = produto - (produto * desconto)
+		escreva("Valor do produto com desconto: " + total)
+	}
+}

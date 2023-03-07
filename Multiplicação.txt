@@ -1,0 +1,11 @@
+programa
+{ 
+	funcao inicio() {
+		inteiro num1, resultado
+		
+		escreva(Informe um valor )
+		leia (num1)
+		resultado = num1  2
+		escreva(Resultado  + num1 +  x 2 =  + resultado)
+	}
+}

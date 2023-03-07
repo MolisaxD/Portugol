@@ -1,0 +1,15 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real r, us, cot
+		escreva("Insira uma quantia em dólares: ")
+		leia(us)
+		escreva("Insira a cotação atual do dólar: ")
+		leia(cot)
+		
+		r = us * cot
+		escreva("Valor convertido em reais: R$" + r)
+	}
+}

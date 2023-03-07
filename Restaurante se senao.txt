@@ -1,0 +1,53 @@
+programa
+{
+	inclua biblioteca Matematica --> mat
+	
+	funcao inicio()
+	{
+		inteiro opcao, pratos
+		real peso, precoP, precoL, arredondarPreco, pagamento, troco, arredondarTroco, valorPrato = 19.90, valorKg = 79.90
+		
+		escreva("--- MENU ---\n")
+		escreva("1) Kg livre = R$ 19,90\n")
+		escreva("2) Kg pesado = R$ 79,90\n")
+		escreva("Escolha a opção de sua preferência: ")
+		leia(opcao)
+
+		limpa()
+
+		se(opcao == 1) 
+		{
+			escreva("Informe a quantidade de pratos: ")
+			leia(pratos)
+			precoL = pratos * valorPrato
+			arredondarPreco = mat.arredondar(precoL, 2)
+			
+			escreva("O valor do pedido foi R$ " + arredondarPreco + "\n")
+			escreva("Valor recebido em dinheiro: R$ ")
+			leia(pagamento)
+			
+			troco = pagamento - arredondarPreco
+			arredondarTroco = mat.arredondar(troco, 2)
+			escreva("Troco: R$ " + arredondarTroco)
+		} 
+		senao se (opcao == 2) 
+		{
+			escreva("Insira o peso informado na balança (em kg): ")
+			leia(peso)
+			precoP = peso * valorKg
+			arredondarPreco = mat.arredondar(precoP, 2)
+			
+			escreva("O valor do pedido foi R$ " + arredondarPreco + "\n")	
+			escreva("Valor recebido em dinheiro: R$ ")
+			leia(pagamento)
+			
+			troco = pagamento - arredondarPreco
+			arredondarTroco = mat.arredondar(troco, 2)
+			escreva("Troco: R$ " + arredondarTroco)
+		} 
+		senao 
+		{
+			escreva("Opção inválida.")
+		}	
+	}
+}

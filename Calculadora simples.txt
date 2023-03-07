@@ -1,0 +1,23 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		real N1, N2, soma, sub, mult, div
+		
+		escreva("Insira o primeiro número: ")
+		leia(N1)
+		escreva("Insira o segundo número: ")
+		leia(N2)
+
+		soma = N1 + N2
+		sub = N1 - N2
+		mult = N1 * N2
+		div = N1 / N2
+
+		escreva("O resultado da soma é: " + soma)
+		escreva("O resultado da subtração é: " + sub)
+		escreva("O resultado da multiplicação é: " + mult)
+		escreva("O resultado da divisão é: " + div)
+	}
+}
