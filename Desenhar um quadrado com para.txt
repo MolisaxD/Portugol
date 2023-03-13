@@ -1,0 +1,21 @@
+programa
+{
+	funcao inicio()
+	{
+		cadeia simbolo
+		inteiro tamanho
+		escreva("Escolha o tamanho do quadrado: ")
+		leia(tamanho)
+		escreva("Escolha o símbolo que forma o quadrado: ")
+		leia(simbolo)
+
+		para(inteiro linha = 1; linha <= tamanho; linha++)
+		{
+			para(inteiro coluna = 1; coluna <= tamanho; coluna++)
+			{
+			escreva(simbolo, " ")
+			}
+			escreva(simbolo, "\n")
+		}
+	}
+}
