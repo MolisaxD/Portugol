@@ -1,0 +1,157 @@
+programa
+{
+	
+    cadeia  sair, senha,usuario, voltarlogin, opcao
+    
+  
+    
+       //LOGIN
+    funcao inicio(){
+    escreva("\nLogin")
+    escreva("\nDigite o seu login: ")
+    leia(usuario)
+    escreva("\nDigite sua senha: ")
+    leia(senha)
+    limpa()
+    se ((usuario == "adm") e (senha =="senai")){
+    	   menu()
+    }senao {
+    	escreva("\nNome de usuario ou senha incoreta")
+    	escreva("\nDeseja voltar: \nsim \nnao\n")
+    	leia(voltarlogin)
+    	limpa()
+    	se (voltarlogin == "sim"){
+    		inicio()
+    	}
+    	se (voltarlogin == "nao"){
+    		escreva("\n")
+    	}
+    }
+    }
+       //MENU 
+    funcao menu(){
+     
+    escreva("Bem-vindo\n")
+    escreva("1 - \n")
+    escreva("2 - \n")
+    escreva("3 -\n")
+    escreva("4 - \n")
+    escreva("5 - \n")
+    escreva("6 - \n")
+    escreva(" \n")
+    leia(opcao)
+
+    limpa()
+    }}
+
+
+programa
+{
+//Cadastro de cliente
+	
+cadeia nomeCadastro, cpfCadastro
+	funcao inicio()
+	{
+		escreva("cadastro de cliente\n")
+		escreva("\nnome do cliente")
+		leia(nomeCadastro)
+	}
+//Empréstimo de livro - usa dados do cadastro     
+	funcao emprestarLivro()
+	{ 	
+		se(nomeCadastro == "")
+		{
+			escreva("Você não está cadastrado no sistema.")
+		}
+		senao
+		{
+			escreva("Escolha um livro para levar: ")
+			exibirLivros()
+		}	     
+	}         
+}
+
+
+                                      
+
+
+
+
+
+
+
+funcao relatorio()// essa função será responsável por gerar o relatório sobre os empréstimos dos livros
+    {
+     escreva("\nInforme quantos livros o cliente escolheu(Quantidade máxima de livros = 3 livros) : ")
+     leia(qtdLivros)
+      se (qtdLivros <= 3){
+    	     escreva("\nEmpréstimo de livros foi permitido ao cliente\n")
+    }
+      senao{
+      	escreva("\nO cliente excedeu o número de livros permitido\n")
+      }
+         escreva("\nInforme por quanto tempo o cliente ficou com o(s) livro(s)(Quantidade máxima de dias = 7 dias):\n ")
+         leia(dias)
+         se (dias <= 7){
+    	    escreva("\nO cliente esteve no limite de dias permitido\n")
+    }
+      senao{
+      	escreva("\nO cliente excedeu o número de dias permitido")
+          limpa()
+   
+      }
+
+   
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+—-------------------------------------------------------------------------------------------------------------------
+programa
+{
+	
+cadeia nome[5], livro, nome1 = ""
+	
+	funcao inicio()
+	{
+		se(nome1 == "admin")
+		{
+			escreva("------- CADASTRO DE LIVROS -------\n")
+			para(inteiro i = 0; i <= 4; i++)
+			{
+				escreva("Informe nome do livro: ")
+				leia(livro)
+				nome[i] = livro	
+			}
+			escreva("Livros cadastrados: \n")
+			para(inteiro i = 0; i <= 4; i++)
+			{
+				escreva(nome[i], "\n")
+			}
+		}
+		senao
+		{
+			escreva("Você não possui permissão de administrador para realizar esta tarefa. Faça login como administrador.")
+		}
+
+	}
+}
