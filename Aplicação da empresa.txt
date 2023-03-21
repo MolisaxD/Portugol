@@ -1,0 +1,215 @@
+programa
+{
+	inclua biblioteca Calendario --> cal
+	
+	logico ponto = falso
+	inteiro opcao, horarioEntrada = -1, horarioSaida = -1, horasTrabalhadas = -1
+	cadeia usuario = "", senha = "", nome = "", cpf = "", sair
+	
+	funcao inicio()
+	{
+	
+		se(usuario == "Melissa" e senha == "1234")
+		{
+			escreva("------- MENU -------\n")
+			escreva("1) Ponto Eletrônico\n")
+			escreva("2) Gerência\n")
+			escreva("3) Relatório\n")
+			escreva("4) Cadastro de Funcionário\n")
+			escreva("5) Setores\n")
+			escreva("6) Sair\n")
+			leia(opcao)
+
+			limpa()
+
+			escolha(opcao)
+			{
+			caso 1:
+				pontoEletronico()
+				voltarMenu()
+			pare
+			caso 2:
+				gerencia()
+				voltarMenu()
+			pare
+			caso 3:
+				relatorio()
+				voltarMenu()
+			pare
+			caso 4:
+				cadastroFuncionario()
+				voltarMenu()
+			pare
+			caso 5:
+				setores()
+				voltarMenu()
+			pare
+			caso 6:
+			
+			pare
+			}
+
+		}
+		senao 
+		{
+			login()
+		}
+	}
+
+	funcao login()
+	{
+		escreva("Digite o nome de usuário: ")
+		leia(usuario)
+		escreva("Digite a senha: ")
+		leia(senha)
+		se(usuario != "Melissa" ou senha != "1234" )
+		{
+			escreva("Usuário e/ou senha inválidos!!\n")
+		}
+		inicio()
+	}
+
+	funcao pontoEletronico()
+	{	
+		se(nome == "" ou cpf == "")
+		{
+			escreva("Você não está cadastrado. ")
+		}
+		senao
+		{
+			escreva("------- PONTO ELETRÔNICO -------\n")
+			se(ponto)
+			{
+				horarioSaida = cal.hora_atual(falso)
+				escreva("Horário de saída: ", horarioSaida)
+				ponto = falso
+	
+			}
+			senao
+			{
+				horarioEntrada = cal.hora_atual(falso)
+				escreva("Horário de entrada: ", horarioEntrada)
+				ponto = verdadeiro
+			}
+		}
+	}
+
+	funcao gerencia()
+	{
+		se(nome == "" ou cpf == "")
+		{
+			escreva("Você não está cadastrado.")
+		}
+		senao
+		{
+			escreva("------- GERÊNCIA -------\n")
+			escreva("1) Excluir cadastro\n")
+			escreva("2) Mudar cadastro\n")
+			escreva("3) Checar dados\n")
+			leia(opcao)
+	
+			escolha(opcao)
+			{
+				caso 1:
+					nome = ""
+					cpf = ""
+					escreva("Cadastro excluído.")
+				pare
+				caso 2:
+					escreva("Digite um novo nome: ")
+					leia(nome)
+					escreva("Digite um novo CPF: ")
+					leia(cpf)
+					escreva("Cadastro atualizado.")
+				pare
+				caso 3:
+				escreva("Dados cadastrados: \n")
+				escreva("Nome: ", nome, "\n")
+				escreva("CPF: ", cpf, "\n")
+			}
+		}
+	}
+
+	funcao relatorio()
+	{
+		se(nome == "" ou cpf == "")
+		{
+			escreva("Você não está cadastrado. ")
+		}
+		senao
+		{
+			se(horarioEntrada == -1 ou horarioSaida == -1)
+			{
+				escreva("Você ainda não bateu ponto.")
+			}
+			senao
+			{
+				escreva("------- RELATÓRIO -------\n")
+				horasTrabalhadas = horarioSaida - horarioEntrada
+				escreva("Você trabalhou por: ", horasTrabalhadas, " horas hoje. ")
+				se(horasTrabalhadas < 8)
+				{
+					escreva("Sua diária ainda não foi cumprida.")
+				}
+				senao
+				{
+					escreva("Sua diária já foi cumprida.")
+				}
+			}
+			
+		}
+	}
+
+	funcao cadastroFuncionario()
+	{
+		se(nome != "" ou cpf != "")
+		{
+			escreva("Você já se cadastrou no sistema. Procure a gerência para alterar seu cadastro.")
+		}
+		senao
+		{
+			escreva("------- CADASTRAR FUNCIONÁRIO -------\n")
+			escreva("Digite seu nome: ")
+			leia(nome)
+			escreva("Digite seu CPF: ")
+			leia(cpf)
+			escreva("Cadastro realizado no sistema!")
+		}
+	}
+
+	funcao setores()
+	{
+		se(nome == "" ou cpf == "")
+		{
+			escreva("Você não está cadastrado.")
+		}
+		senao
+		{
+			escreva("------- SETORES -------\n")
+			escreva("SETOR A - Administrativo, Financeiro\n")
+			escreva("SETOR B - Marketing\n")
+			escreva("SETOR C - Operações\n")
+			escreva("SETOR D - Recursos Humanos\n")
+		}
+	}
+	
+	funcao voltarMenu()
+	{
+		escreva("\nDeseja retornar ao menu? (Sim ou Não)\n")
+        	leia(sair)
+   
+       	se(sair == "Sim")
+        	{
+          	limpa()
+            	inicio()
+        	}
+       	senao se(sair == "Não")
+        	{
+        	}
+        	senao
+        	{
+            	escreva("Opção inválida. ")
+            	voltarMenu()
+		}
+	}
+}
