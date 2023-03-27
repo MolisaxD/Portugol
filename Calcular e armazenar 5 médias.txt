@@ -1,0 +1,24 @@
+programa
+{
+	cadeia aluno[5]
+	
+real nota1, nota2, nota3, media[5]
+	funcao inicio()
+	{
+		para(inteiro i = 1; i <= 5; i++)
+		{
+			
+			escreva("Nome do aluno: ")
+			leia(aluno[i])
+			escreva("Insira a primeira nota: ")
+			leia(nota1)
+			escreva("Insira a segunda nota: ")
+			leia(nota2)
+			escreva("Insira a terceira nota: ")
+			leia(nota3)
+
+			media[i] = (nota1 + nota2 + nota3)/3
+		
+		}
+	}
+}
