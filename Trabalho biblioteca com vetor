@@ -1,0 +1,229 @@
+programa
+{
+	inclua biblioteca Calendario --> cal
+	
+	inteiro opcao
+	logico livrosRegistrados = falso
+    	cadeia  sair, senha, usuario = "", nomeCadastro = "", nomeLivro[5], livro, livroEscolhido = ""
+//Menu
+    funcao inicio(){
+     
+    escreva("\nBem-vindo\n")
+    escreva("1 - Login\n")
+    escreva("2 - Cadastro do cliente\n")
+    escreva("3 - Empréstimo de Livro\n")
+    escreva("4 - Relatório da biblioteca(s)\n")
+    escreva("5 - Cadastro de livros\n")
+    escreva("6 - Exibir livros cadastrados\n")
+    escreva("7 - Sair\n")
+    escreva("Digite a opção escolhida\n")
+    leia(opcao)
+
+    limpa()
+        
+   
+    escolha(opcao)
+    {
+       caso 1:
+        	login()
+		inicio()
+       caso 2:
+           cadastrarCliente()
+           inicio()
+       pare
+       caso 3:
+           emprestarLivro()
+       pare
+       caso 4:
+           relatorio()
+       pare
+       caso 5:
+           cadastrarLivros()
+       pare
+       caso 6:
+           exibirLivros()
+           inicio()
+       pare
+       caso 7:
+       	escreva("Programa finalizado à pedido do cliente.")
+       pare
+       caso contrario: 
+       	escreva("Opção inválida!")
+       	inicio()
+    }
+    }
+
+//Login
+funcao login()
+{
+	escreva("------- LOGIN DE ADMINISTRADOR -------\n")
+	    escreva("\nDigite o seu login: ")
+	    leia(usuario)
+	    escreva("\nDigite sua senha: ")
+	    leia(senha)
+	    limpa()
+	    se ((usuario == "admin") e (senha =="senai")){
+	    	escreva("Você agora possui acesso aos menus: 'Relatório' e 'Cadastrar Livros'.")
+	    	inicio()
+	    }senao {
+	    	escreva("\nNome de usuario e/ou senha incorretos.")
+	    	usuario = ""
+	    	login()
+	    }
+    }
+
+//Cadastro de cliente
+
+	funcao cadastrarCliente()
+	{
+		escreva("------- CADASTRO DE CLIENTE -------\n")
+		escreva("Nome do cliente: \n")
+		leia(nomeCadastro)
+		escreva("Cliente registrado(a) com sucesso!")
+		voltarMenu()
+	}
+//Empréstimo de livro - usa dados do cadastro     
+	funcao emprestarLivro()
+	{ 	
+		escreva("------- EMPRÉSTIMO -------\n")
+		se(nomeCadastro == "")
+		{
+			escreva("Você não está cadastrado no sistema.")
+			inicio()
+		}
+		senao
+		{
+			se(livrosRegistrados == verdadeiro)
+			{
+				escreva("Escolha um livro para levar: \n")
+				exibirLivros()
+				leia(opcao)
+				escolha(opcao)
+				{
+					caso 1:
+						livroEscolhido = nomeLivro[0]
+						escreva("Dados do empréstimo: \n")
+						escreva(nomeCadastro, ": ", livroEscolhido, "\n")
+						escreva("Favor devolver em até 7 dias. Caso não seja cumprido o prazo será aplicada uma multa de R$ 2,00") 
+						voltarMenu()
+					pare
+					caso 2:
+						livroEscolhido = nomeLivro[1]
+						escreva("Dados do empréstimo: \n")
+						escreva(nomeCadastro, ": ", livroEscolhido, "\n")
+						escreva("Favor devolver em até 7 dias. Caso não seja cumprido o prazo será aplicada uma multa de R$ 2,00") 
+						voltarMenu()
+					pare
+					caso 3:
+						livroEscolhido = nomeLivro[2]
+						escreva("Dados do empréstimo: \n")
+						escreva(nomeCadastro, ": ", livroEscolhido, "\n")
+						escreva("Favor devolver em até 7 dias. Caso não seja cumprido o prazo será aplicada uma multa de R$ 2,00")
+						voltarMenu() 
+					pare
+					caso 4:
+						livroEscolhido = nomeLivro[3]
+						escreva("Dados do empréstimo: \n")
+						escreva(nomeCadastro, ": ", livroEscolhido, "\n")
+						escreva("Favor devolver em até 7 dias. Caso não seja cumprido o prazo será aplicada uma multa de R$ 2,00")
+						voltarMenu()
+					pare 
+					caso 5:
+						livroEscolhido = nomeLivro[4]
+						escreva("Dados do empréstimo: \n")
+						escreva(nomeCadastro, ": ", livroEscolhido, "\n")
+						escreva("Favor devolver em até 7 dias. Caso não seja cumprido o prazo será aplicada uma multa de R$ 2,00") 
+						voltarMenu()
+					pare
+					caso contrario:
+						escreva("Opção inválida.")
+						emprestarLivro()
+					pare
+				}
+			}
+			senao
+			{
+				escreva("Não há livros cadastrados! Contate o administrador.")	     
+				inicio()
+			}
+			
+		}         
+	}
+//Relatório
+	funcao relatorio()
+    	{
+
+    		se(livroEscolhido == "")
+    		{
+    			escreva("Não há empréstimos registrados.")
+    			inicio()
+    		}
+    		senao
+    		{
+    			escreva("------- RELATÓRIO -------\n")
+			escreva("Cliente ", nomeCadastro, " pegou emprestado o livro: ", livroEscolhido)
+			voltarMenu()
+    		}
+ 	}
+//Exibir lista de livros
+	funcao exibirLivros()
+	{
+		se(livrosRegistrados)
+		{
+			escreva("------- LIVROS CADASTRADOS -------\n")
+			para(inteiro i = 0; i <= 4; i++)
+			{
+				escreva(i + 1, " - ", nomeLivro[i], "\n")
+			}
+		}
+		senao
+		{
+			escreva("Não há livros cadastrados.")
+			inicio()
+		}
+
+	}
+//Cadastrar livros (admin)
+	funcao cadastrarLivros()
+	{
+		se(usuario == "admin")
+		{
+			escreva("------- CADASTRO DE LIVROS -------\n")
+			para(inteiro i = 0; i <= 4; i++)
+			{
+				escreva("Informe nome do livro: ")
+				leia(livro)
+				nomeLivro[i] = livro	
+			}
+			escreva("Livros cadastrados: \n")
+			para(inteiro i = 0; i <= 4; i++)
+			{
+				escreva(nomeLivro[i], "\n")
+			}
+			livrosRegistrados = verdadeiro
+		}
+		senao
+		{
+			escreva("Você não possui permissão de administrador para realizar esta tarefa. Faça login como administrador.")
+			livrosRegistrados = falso
+		}
+	}
+	funcao voltarMenu()
+	{
+		escreva("\nDeseja voltar ao menu? (Sim ou Não)\n")
+		leia(sair)
+		se(sair == "Não")
+		{
+			escreva("Programa finalizado à pedido do cliente.")
+		}
+		senao se(sair == "Sim")
+		{
+			inicio()
+		}
+		senao
+		{
+			escreva("Opção inválida.")
+			voltarMenu()
+		}
+	}
+}
