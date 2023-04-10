@@ -1,0 +1,142 @@
+programa
+{
+	logico confirmaPreenchimento = falso
+	cadeia nomes[5], nomePesquisa, confirmaLoop, confirmaSair
+	
+	inteiro opcao, indices[5] = {0, 1, 2, 3, 4}, indicePesquisa
+	funcao inicio()
+	{
+		escreva("--- MENU ---\n")
+		escreva("1) Cadastrar pessoa em índice\n")
+		escreva("2) Mostrar pessoa cadastrada no índice\n")
+		escreva("3) Procurar pessoa por nome\n")
+		escreva("4) Sair\n")
+		leia(opcao)
+		
+		escolha(opcao)
+		{
+			caso 1:
+				cadastrar()
+			pare
+			caso 2:
+				mostrar()
+			pare
+			caso 3:
+				procurar()
+			pare
+			caso 4:
+				escreva("Volte sempre!")
+			pare
+		}
+	}
+
+	funcao cadastrar()
+	{
+		para(inteiro i = 0; i <= 4; i++)
+		{
+			enquanto(nomes[i] != "")
+			{
+				i++
+			}
+			se(confirmaPreenchimento)
+			{
+				escreva("Todos os índices foram preenchidos.\n")
+				sair()
+			}
+			senao
+			{
+				escreva("Informe o nome a ser cadastrado: ")
+				leia(nomes[i])
+				enquanto(nomes[i] == "")
+				{
+					escreva("Insira um nome válido: ")
+					leia(nomes[i])
+				}
+	
+				escreva("Deseja cadastrar outro? Digite 'S'")
+				leia(confirmaLoop)
+	
+				limpa()
+	
+				se(confirmaLoop == "S")
+				{
+					se(i >= 4)
+					{
+						escreva("Todos os índices foram preenchidos.\n")
+						confirmaPreenchimento = verdadeiro
+						sair()
+					}
+				}
+				senao
+				{
+					inicio()
+				}
+			}
+		}
+	}
+
+	funcao mostrar()
+	{
+		se(nomes[0] == "" e nomes[1] == "" e nomes[2] == "" e nomes[3] == "" e nomes[4] == "")
+		{
+			escreva("Não há nomes cadastrados.")	
+		}
+		senao
+		{
+			escreva("Insira um número de índice: ")
+			leia(indicePesquisa)
+			se(indicePesquisa < 0 ou indicePesquisa > 4)
+			{
+				escreva("Número de índice inválido. Escolha de 0 a 4\n")
+				mostrar()
+			}
+			senao
+			{
+				se(nomes[indicePesquisa] == "")
+				{
+					limpa()
+					escreva("Não há nome cadastrado nesse índice.\n")
+					inicio()
+				}
+				senao
+				{
+					escreva(indices[indicePesquisa], ") ", nomes[indicePesquisa], "\n")
+					inicio()
+				}
+			}
+		}
+	}
+
+	funcao procurar()
+	{
+		escreva("Insira o nome: ")
+		leia(nomePesquisa)
+		para(inteiro i = 0; i <= 4; i++)
+		{
+			se(nomePesquisa == nomes[i])
+			{
+				escreva(indices[i], ") ", nomes[i], "\n")
+				inicio()
+			}
+		}
+	}
+
+	funcao sair()
+	{
+		escreva("Deseja voltar ao menu? S/N\n")
+		leia(confirmaSair)
+
+		se(confirmaSair == "N")
+		{
+			escreva("Volte sempre!")
+		}
+		senao se(confirmaSair == "S")
+		{
+			inicio()
+		}
+		senao
+		{
+			escreva("Opção inválida.")
+		}
+	}
+}
