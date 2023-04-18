@@ -1,0 +1,25 @@
+programa
+{
+	inteiro linha, coluna = 0
+	real num, matriz[3][3], soma = 0.0
+	
+	funcao inicio()
+	{
+		para(linha = 0; linha <= 2; linha++)
+		{
+			escreva("LINHA ", linha, "\n")
+			
+			para(coluna = 0; coluna <= 2; coluna++)
+			{
+				escreva("COLUNA ", coluna, ": ")
+				leia(num)
+				matriz[linha][coluna] = num
+				se(coluna == 2)
+				{
+					soma = soma + num
+				}
+			}
+		}
+		escreva(soma)
+	}
+}
