@@ -1,0 +1,28 @@
+programa
+{
+	inteiro linha, coluna = 0
+	real num, matriz[5][5]
+	
+	funcao inicio()
+	{
+		para(linha = 0; linha <= 4; linha++)
+		{
+			escreva("LINHA ", linha, "\n")
+			
+			para(coluna = 0; coluna <= 4; coluna++)
+			{
+				escreva("COLUNA ", coluna, ": ")
+				leia(num)
+				matriz[linha][coluna] = num
+			}
+		}
+		para(linha = 0; linha <= 4; linha++)
+		{
+			para(coluna = 0; coluna <= 4; coluna++)
+			{
+				escreva(" ",matriz[linha][coluna], " ")
+			}
+		escreva("\n")
+		}
+	}
+}
