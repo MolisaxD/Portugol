@@ -1,0 +1,57 @@
+programa
+{
+	inteiro linha, coluna
+	cadeia tabela[7][5], nome, idade, id, func, codigo
+	funcao inicio()
+	{
+		para(linha = 0; linha <= 6; linha++)
+		{	
+			escreva("DADOS DO ", linha + 1, "° FUNCIONÁRIO\n")
+			para(coluna = 0; coluna <= 4; coluna++)
+			{
+				escolha(coluna)
+				{
+					caso 0:
+						escreva("Nome: ")
+						leia(nome)
+						tabela[linha][coluna] = nome
+					pare
+					caso 1:
+						escreva("Idade: ")
+						leia(idade)
+						tabela[linha][coluna] = idade
+					pare
+					caso 2:
+						escreva("ID: ")
+						leia(id)
+						tabela[linha][coluna] = id
+					pare
+					caso 3:
+						escreva("Função: ")
+						leia(func)
+						tabela[linha][coluna] = func
+					pare
+					caso 4:
+						escreva("Código: ")
+						leia(codigo)
+						tabela[linha][coluna] = codigo
+					pare
+				}
+			}
+		}
+
+		escreva("NOME | IDADE | ID | FUNÇÃO | CÓDIGO\n")
+		para(linha = 0; linha <= 6; linha++)
+		{
+			para(coluna = 0; coluna <= 4; coluna++)
+			{
+				se(coluna > 0 e coluna < 5)
+				{
+					escreva(" | ")
+				}
+				escreva(tabela[linha][coluna])	
+			}
+			escreva("\n")
+		}
+	}
+}
