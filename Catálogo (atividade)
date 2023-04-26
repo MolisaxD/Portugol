@@ -1,1 +1,64 @@
 
+programa
+{
+	
+inteiro opcao
+	cadeia 
+	//Linha 1: ID, Linha 2: Nome
+	//TI - 6 subcategorias
+	ti[][] = {{"V331h","F2451","A285e","V332h","F6921","M539g","062p"},
+	{"Hardware na prática","Lógica e Design de Programação","Compiladores - Princípios, técnicas e ferramentas","Hardware TOTAL","Lógica de Programação","GNU/Linux","Projeto de redes Top-Down"}},
+	//Mecânica - 3 subcategorias
+	mecanica[][] = {{"B463m","R165c","B410c"},{"Manual Prático de Fundição","Corrosão e seu Controle","Caldeiras - Instrumentação e Controle"}},
+	//Elétrica - 3 subcategorias
+	eletrica[][] = {{"F182c", "M963a", "F182e"},{"Corrente Alternada e Elementos da Eletrônica", " Análise de Circuitos Elétricos", "Medição Elétrica"}},
+	//Automotiva - 3 subcategorias
+	automotiva[][] = {{"S491t","S491s","S491v"}, {"Tecnologia da Repintura Automotiva"," Sistemas de Freios","Sistema de Sinalização e Iluminação"}},
+	//Gestão - 7 subcategorias
+	gestao[][] = {{"R484c","H474g","H417m","L935p","B355p","M386a","S551c"},
+	{"Contabilidade Básica","Gerência de Projetos","Medindo a Satisfação do Cliente","Planejamento de Recursos Humanos","Projeto de Produto","Administração de Materiais","Comportamento do Cliente"}},
+	//Automação Industrial - 2 subcategorias
+	automacaoIndustrial[][] = {{"B694i","F437a"},{"Instrumentação e Controle","Automação Pneumática"}}
+	
+	funcao inicio()
+	{
+		escreva("Olá Mundo")
+	}
+
+	funcao catalogo()
+	{
+		escreva("------- SETORES -------\n")
+		escreva("01) Tecnologia da Informação\n")
+		escreva("02) Mecânica\n")
+		escreva("03) Elétrica\n")
+		escreva("04) Automotiva\n")
+		escreva("05) Gestão\n")
+		escreva("06) Automação Industrial\n")
+		leia(opcao)
+		
+		escolha(opcao)
+		{
+			caso 1:
+				escreva("Informática | Qualidade dos Sistemas e do Software | Arquitetura dos Computadores | Hardware | Linguagem de Programação | Interface | Redes de Computadores")
+			pare
+			caso 2:
+				escreva("Mecânica dos Materiais | Engenharia Mecânica | Máquinas Térmicas")
+			pare
+			caso 3:
+				escreva("Engenharia Elétrica | Circuitos Elétricos | Medição Elétrica")
+			pare
+			caso 4:
+				escreva("Preparação de Tintas para Pintura Automotiva | Freios | Transmissão Mecânica")
+			pare
+			caso 5:
+				escreva("Contabilidade | Gerenciamento de Projetos | Rotinas Administrativas | Gestão de Pessoas | Gestão da Produção | Gestão de Estoque | Marketing")
+			pare 
+			caso 6:
+				escreva("Instrumentação | Automação e Controle")
+			pare
+			caso contrario:
+				escreva("Opção inválida!")
+			pare
+		}
+	}
+}
