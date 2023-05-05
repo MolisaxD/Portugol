@@ -1,0 +1,156 @@
+programa
+{
+	cadeia crescente = "", sair
+	inteiro opcao, tamanho, linha, coluna, decrescente = 0
+	real areaPiramide
+	funcao inicio()
+	{
+		escreva("Escolha a forma geométrica que deseja imprimir:\n")
+		escreva("1) Quadrado\n")
+		escreva("2) Quadrado vazio\n")
+		escreva("3) Triângulo\n")
+		escreva("4) Triângulo isósceles\n")
+		escreva("5) Sair do programa\n")
+		leia(opcao)
+
+		limpa()
+	
+		escolha(opcao)
+		{
+			caso 1:
+				desenharQuadrado()
+				voltarMenu()
+			pare
+			caso 2:
+				desenharQuadradoVazio()
+				voltarMenu()
+			pare
+			caso 3:
+				desenharTriangulo()
+				voltarMenu()
+			pare
+			caso 4:
+				desenharPiramide()
+				voltarMenu()
+			pare
+			caso 5:
+				
+			pare
+		}
+	}
+	
+	funcao desenharQuadrado()
+	{
+		escreva("Tamanho do quadrado: ")
+		leia(tamanho)
+			
+		para(linha = 1; linha < tamanho; linha++)
+		{
+			para(coluna = 1; coluna < tamanho; coluna++)
+			{
+			escreva("* ")
+			}
+		escreva("* \n")
+		}
+		escreva("Área do quadrado: ", tamanho * tamanho, " caracteres\n")
+	}
+	
+	funcao desenharQuadradoVazio()
+	{
+		escreva("Tamanho do quadrado: ")
+		leia(tamanho)
+
+		para(linha = 1; linha <= tamanho; linha++)
+		{
+			se(linha == 1 ou linha == tamanho)
+			{
+				para(coluna = 1; coluna <= tamanho; coluna++)
+				{
+					escreva("* ")
+				}
+			}
+			senao
+			{
+				para(coluna = 1; coluna <= tamanho; coluna ++)
+				{
+					se(coluna == 1 ou coluna == tamanho)
+					{
+						escreva("* ")
+					}
+					senao
+					{
+						escreva("  ")
+					}
+				}
+			}
+			escreva("\n")
+		}
+		escreva("Área do quadrado: ", tamanho * tamanho, " caracteres\n")
+	}
+	
+	funcao desenharTriangulo()
+	{
+		escreva("Tamanho do triângulo: ")
+		leia(tamanho)
+		para(linha = 1; linha <= tamanho; linha++)
+		{
+			crescente = crescente + "* "
+			escreva(crescente)
+			escreva("\n")
+		}
+		escreva("Área do triângulo: ", (tamanho * tamanho)/2, " caracteres\n")
+		
+	}
+	
+	funcao desenharPiramide()
+	{
+		escreva("Tamanho do triângulo isósceles: ")
+		leia(tamanho)
+		para(linha = 1; linha <= tamanho; linha++)
+		{
+			crescente = crescente + "* "
+			escreva(crescente)
+			escreva("\n")
+		}
+		
+		para(inteiro i = -1; i < tamanho; i++)
+		{
+		escreva("* ")
+		}
+		escreva("\n")
+		
+		para(linha = tamanho; linha > 0; linha --)
+		{
+			enquanto(decrescente < linha)
+			{
+				escreva("* ")
+				decrescente++
+			}
+			escreva("\n")
+			decrescente = 0
+		}
+		areaPiramide = ((tamanho + 1) * 2) * (tamanho + 1)/2
+		escreva("Área do triângulo isósceles: ", areaPiramide," caracteres\n")
+	}
+
+	funcao voltarMenu()
+	{
+		escreva("Deseja retornar ao menu?\n")
+		leia(sair)
+	
+		se(sair == "Sim") 
+		{
+			limpa()
+			inicio()
+		}
+		senao se(sair == "Não")
+		{
+		}
+		senao
+		{
+			escreva("Opção inválida. ")
+			voltarMenu()
+		}
+	}
+}
+
