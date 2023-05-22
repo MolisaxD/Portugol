@@ -1,6 +1,5 @@
 programa
 {
-	
 	funcao inicio()
 	{
 		real produto, desconto = 0.1, total
